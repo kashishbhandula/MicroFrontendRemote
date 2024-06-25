@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const next = require('next');
 const cors = require('cors');
@@ -16,7 +15,14 @@ app.prepare().then(() => {
     credentials: true,
   }));
 
+  server.use(express.json()); // to support JSON-encoded bodies
+  server.use(express.urlencoded({ extended: true })); // to support URL-encoded bodies
+
   server.all('*', (req, res) => {
+    console.log("Request URL:", req.url);
+    // console.log("Request Method:", req.method);
+    // console.log("Request Headers:", req.headers);
+    // console.log("Request Body:", req.body);
     return handle(req, res);
   });
 
