@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true nodemon --watch . --exec node server.js",
-    "build": "webpack --config webpack.prod.js",
-    "start": "next start",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "start": "next start -p 3001",
     "lint": "next lint"
   },
   "dependencies": {

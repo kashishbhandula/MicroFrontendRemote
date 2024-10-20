@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>This is remote home page V12</div>;
+  return <div>This is remote home page V13</div>;
 }
